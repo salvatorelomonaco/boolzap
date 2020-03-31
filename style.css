@@ -1,0 +1,441 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.container-top {
+    width: 100%;
+    height: 15vh;
+    background-color: #009688;
+}
+
+.container-bottom {
+    width: 100%;
+    height: 85vh;
+    background-color: #d9dbd5;
+}
+
+/* Contenitore main content */
+
+.container-app {
+    height: 94vh;
+    width: 80vw;
+    min-width: 800px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(77,77,77,0.74);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(77,77,77,0.74);
+    box-shadow: 0px 0px 5px 2px rgba(77,77,77,0.74);
+}
+
+.container-app .left-part, .container-app .right-part {
+    height: 100%;
+}
+
+/* Parte sinistra main content*/
+
+.container-app .left-part {
+    width: 30%;
+    background-color: #ededed;
+}
+
+.header-left {
+    width: 100%;
+}
+
+/* Parte alta con user */
+
+.user {
+    width: 100%;
+    height: 50px;
+    background-color: #ededed;
+    padding-left: 10px;
+    line-height: 50px;
+}
+
+.user img{
+    height: 36px;
+    margin-top: 7px;
+    cursor: pointer;
+}
+
+.user-icons {
+    float: right;
+    padding: 0 10px;
+}
+
+.user-icons i {
+    margin: 0 10px;
+    color: #959b9d;
+    cursor: pointer;
+}
+
+/* Parte notifiche */
+
+.notification {
+    width: 100%;
+    height: 72px;
+    background-color: #9de1fe;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.notification:hover .text-notification a {
+    text-decoration: underline;
+}
+
+.icon-notification {
+    background-color: white;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    display: flex;
+    opacity: 0.7;
+}
+
+.icon-notification i {
+    margin: auto;
+    color: #9de1fe;
+    font-size: 12px;
+}
+
+.text-notification {
+    padding-left: 10px;
+    color: #343738;
+}
+
+.text-notification p {
+    font-size: 14px;
+}
+
+.text-notification a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #343738;
+}
+
+.text-notification a > span i {
+    font-size: 10px;
+}
+
+/* Barra ricerca chat */
+
+.search-chat {
+    width: 100%;
+    height: 40px;
+    background-color: #f0f0f0;
+    display: flex;
+}
+
+.search-chat input {
+    width: 95%;
+    margin: auto;
+    border-radius: 20px;
+    border: 0;
+    height: 26px;
+    padding-left: 10px;
+}
+
+/* Chat */
+
+.container-chat {
+    height: calc(100% - 40px - 72px - 50px);
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.chat {
+    display: block;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    border-top: 1px solid lightgrey;
+    padding: 10px;
+    display: flex;
+    cursor: pointer;
+}
+
+.container-chat .chat.active {
+    background-color: #e3e5e8;
+}
+
+.chat:hover {
+    background-color: #f0f2f5;
+}
+
+.chat img {
+    height: 42px;
+    align-self: center;
+}
+
+.name-message {
+    padding: 10px;
+    width: 100%;
+    float: right;
+    align-self: center;
+}
+
+.name-message span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.name-message p {
+    font-size: 12px;
+    color: #959b9d;
+}
+
+.clock {
+    font-size: 10px;
+    color: #959b9d;
+}
+
+/* Parte destra main content  */
+
+.container-app .right-part {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-part {
+    position: relative;
+}
+
+.header-right {
+    width: 100%;
+    height: 50px;
+    background-color: #ededed;
+    padding-left: 10px;
+}
+
+.header-right img {
+    height: 36px;
+    margin-top: 7px;
+    float: left;
+}
+
+.current-chat {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    height: 100%;
+}
+
+.current-chat span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.current-chat p {
+    font-size: 12px;
+    color: #959b9d;
+}
+
+.current-chat-icon{
+    float: right;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.current-chat-icon i {
+    margin: 0 10px;
+    color: #959b9d;
+    cursor: pointer;
+}
+
+/* area dei messaggi */
+
+.template {
+    display: none;
+}
+
+.right-part .message-container {
+    width: 100%;
+    height: calc(100% - 50px - 50px);
+}
+
+.right-part .messages {
+	display: none;
+	height: 100%;
+	width: 100%;
+	padding: 5% 10%;
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+.right-part .messages.active {
+	display: block;
+    overflow-y: auto;
+}
+
+.right-part .messages .message {
+	position: relative;
+	margin: 5px 0;
+	padding: 15px 15px 20px 15px;
+	min-width: 20%;
+	max-width: 60%;
+	background: #fff;
+	border-radius: 10px;
+	font-size: 15px;
+}
+
+.right-part .messages .message::after {
+	content: '';
+	display: table;
+	overflow: hidden;
+	clear: both;
+}
+
+.f-right {
+    float: right;
+}
+
+.right-part .messages .message:hover .message-options, .right-part .messages .message .message-options.active {
+	opacity: 1;
+}
+
+.right-part .messages .message .message-options {
+    padding-left: 8px;
+	opacity: 0;
+	color: #B6B9BB;
+	cursor: pointer;
+}
+
+.right-part .messages .message .message-options-panel {
+	display: none;
+	position: absolute;
+	bottom: -75px;
+	width: 150px;
+	height: 80px;
+	background: white;
+	box-shadow: 0px 0px 40px -15px rgba(0,0,0,0.75);
+}
+
+.right-part .messages .message.sent .message-options-panel {
+	right: 0;
+}
+
+.right-part .messages .message.received .message-options-panel {
+	left: 0;
+}
+
+.right-part .messages .message .message-options-panel.active {
+	display: block;
+}
+
+.right-part .messages .message .message-options-panel > div {
+	cursor: pointer;
+	width: 100%;
+	height: 50%;
+	line-height: 40px;
+	font-size: 14px;
+    padding-left: 15px;
+}
+
+.right-part .messages .message .message-options-panel > div:hover {
+	color: #B6B9BB;
+}
+
+.right-part .messages .message .message-time {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	font-size: 10px;
+	color: #B6B9BB;
+}
+
+.right-part .messages .message.received {
+	background: white;
+	float:left;
+	clear:both;
+}
+
+.right-part .messages .message.sent {
+	background: #D5F9BA;
+	float: right;
+	clear:both;
+}
+
+/* Parte di text messaggio */
+
+.text-area {
+    height: 50px;
+    width: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    border-left: 1px solid grey;
+}
+
+.text-area input {
+    width: 88%;
+    margin: auto;
+    border-radius: 20px;
+    border: 0;
+    height: 34px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.text-area i {
+    font-size: 22px;
+    color: #959b9d;
+    cursor: pointer;
+}
+
+/* Layout intro */
+.intro-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f7f9fa;
+    border-bottom: 5px solid #58e870;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 170px;
+    color: #959b9d;
+    text-align: center;
+    z-index: 2;
+}
+
+.intro-layout img {
+    height: 280px;
+    margin: 100px 0 30px 0;
+}
+
+.intro-layout h2 {
+    font-weight: 300;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.no-active {
+    display: none;
+}
+
+@media screen and (max-width: 1000px)  {
+    .container-app {
+        height: 100vh;
+        width: 100vw;
+    }
+}
